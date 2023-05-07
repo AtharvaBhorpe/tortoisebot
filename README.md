@@ -28,7 +28,7 @@ ydlidar_ros2_driver depends on YDLidar-SDK library. If you have never installed 
 1. Download or clone the [YDLIDAR/YDLidar-SDK](https://github.com/YDLIDAR/YDLidar-SDK) repository on GitHub.
 2. Compile and install the YDLidar-SDK under the ***build*** directory following `README.md` of YDLIDAR/YDLidar-SDK.
 
-> Credits to [lghrainbow](https://github.com/lghrainbow) for providing the updated [ydlidar driver code](https://github.com/lghrainbow/ydlidar_ros2_driver.git) for supporting humble.
+> Credits to [lghrainbow](https://github.com/lghrainbow) for providing the updated [ydlidar driver code](https://github.com/lghrainbow/ydlidar_ros2_driver.git) for humble support.
 
 ## 1.2 Required Dependences: 
 ```
