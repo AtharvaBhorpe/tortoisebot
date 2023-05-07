@@ -1,4 +1,4 @@
-# Tortoisebot ROS2 Galactic Release
+# Tortoisebot ROS2 Humble Release
 
 # ![TortoiseBot Banner](https://github.com/rigbetellabs/tortoisebot_docs/raw/master/imgs/packaging/pack_front.png)
 
@@ -20,22 +20,31 @@
 <a href="https://www.youtube.com/channel/UCfIX89y8OvDIbEFZAAciHEA">![Youtube Subscribers](https://img.shields.io/youtube/channel/subscribers/UCfIX89y8OvDIbEFZAAciHEA?label=YT%20Subscribers&style=for-the-badge)</a>
 <a href="https://www.instagram.com/rigbetellabs/">![Instagram](https://img.shields.io/badge/Follow_on-Instagram-pink?style=for-the-badge&logo=appveyor?label=Instagram)</a>
 # 1. Installation
-## 1.1 Required Dependences: 
-```
-sudo apt install ros-galactic-joint-state-publisher ros-galactic-robot-state-publisher ros-galactic-cartographer ros-galactic-cartographer-ros ros-galactic-map ros-galactic-gazebo-plugins ros-galactic-teleop-twist-keyboard  ros-galactic-teleop-twist-joy ros-galactic-xacro ros-galactic-nav2* ros-galactic-urdf ros-galactic-rviz
 
+## 1.1 Compile & Install YDLidar SDK
+
+ydlidar_ros2_driver depends on YDLidar-SDK library. If you have never installed YDLidar-SDK library or it is out of date, you must first install YDLidar-SDK library. If you have installed the latest version of YDLidar-SDK, skip this step and go to the next step.
+
+1. Download or clone the [YDLIDAR/YDLidar-SDK](https://github.com/YDLIDAR/YDLidar-SDK) repository on GitHub.
+2. Compile and install the YDLidar-SDK under the ***build*** directory following `README.md` of YDLIDAR/YDLidar-SDK.
+
+> Credits to https://github.com/lghrainbow/ydlidar_ros2_driver.git for providing the updated driver code for supporting humble. Thanks for the contribution!
+
+## 1.2 Required Dependences: 
+```
+sudo apt install ros-humble-joint-state-publisher ros-humble-robot-state-publisher ros-humble-cartographer ros-humble-cartographer-ros  ros-humble-gazebo-plugins ros-humble-teleop-twist-keyboard  ros-humble-teleop-twist-joy ros-humble-xacro ros-humble-nav2* ros-humble-urdf ros-humble-rviz2
 ```
 ```
 cd ~/your workscpace
 colcon build
 ```
-## 1.2 Clone this repo 
+## 1.3 Clone this repo 
 Make sure you clone the repo in your robot and your remote PC 
 ```
-git clone -b ros2-galactic --recursive https://github.com/rigbetellabs/tortoisebot.git
+git clone -b humble-devel --recursive https://github.com/AtharvaBhorpe/tortoisebot.git
 ```
 ```
-cd ~/your workscpace
+cd ~/<your workspace>
 colcon build
 ```
 # 2. Setup
