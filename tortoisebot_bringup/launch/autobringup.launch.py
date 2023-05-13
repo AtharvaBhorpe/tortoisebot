@@ -65,11 +65,23 @@ def generate_launch_description():
         executable='differential.py',
         name ='differential_drive_publisher',
     )
+  
+  # camera_node = Node(
+  #     package='raspicam2',
+  #     condition=IfCondition(PythonExpression(['not ', use_sim_time])),
+  #     executable='raspicam2_node',
+  #     name ='pi_camera',
+  #   )
+
   camera_node = Node(
-      package='raspicam2',
+      package='v4l2_camera',
       condition=IfCondition(PythonExpression(['not ', use_sim_time])),
-      executable='raspicam2_node',
-      name ='pi_camera',
+      executable='v4l2_camera_node',
+      output='screen',
+      parameters=[{
+          'image_size': [640,480],
+          'camera_frame_id': 'camera_link_optical'
+          }]
     )
   robot_state_publisher_node = launch_ros.actions.Node(
         package='robot_state_publisher',
